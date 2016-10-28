@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
   </head>
   <body style="background: #f3f3f3;">
-    <iframe width="100%" height="300px" src="/sandboxed-postmessage/plugin/" style="border: none;" sandbox="allow-scripts"></iframe>
+    <iframe width="100%" height="300px" src="/plugin-iframe-sandbox/sandboxed-postmessage/plugin/" style="border: none;" sandbox="allow-scripts"></iframe>
 
     <script>
       // Sandboxed PostMessage App
@@ -44,6 +44,9 @@
           var message = event.data;
           var uuid = message.uuid;
           var params = message.params;
+          var data = message.data;
+          var name = message.name;
+          var action = message.action;
 
           // Dispatch decorated api function
           window.wizehive.appGetData(params, function (data, error) {
